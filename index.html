@@ -3,74 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMOOTH – Black Friday -30%</title>
-
-    <!-- Bootstrap CDN -->
+    <title>Black Friday SMOOTH | -30% Aujourd'hui Seulement !</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
         }
-        .hero {
-            background: url('https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        .text-brand {
+            color: #ff3366; /* Couleur vive pour contraster avec le noir */
+        }
+        .bg-brand {
+            background-color: #ff3366;
+        }
+        .btn-brand {
+            background-color: #ff3366;
             color: white;
-            padding: 140px 20px;
-            text-shadow: 0 0 10px rgba(0,0,0,0.6);
+            font-weight: bold;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            transition: transform 0.2s, background-color 0.2s;
         }
-        .countdown {
+        .btn-brand:hover {
+            background-color: #e62e5c;
+            color: white;
+            transform: scale(1.05);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            border-bottom: 5px solid #ff3366;
+        }
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #ff3366;
+        }
+        .price-strike {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.1rem;
+        }
+        .price-new {
             font-size: 2rem;
             font-weight: bold;
+            color: #ff3366;
         }
-        .product-card img {
-            border-radius: 12px;
-        }
-        .badge-offer {
-            background: #ff006e;
-            font-size: 1rem;
-        }
-        .cta-final {
-            background: #ff006e;
-            color: white;
-            padding: 60px 20px;
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
         }
     </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero text-center">
-    <h1 class="display-3 fw-bold">Black Friday SMOOTH</h1>
-    <p class="lead">Aujourd’hui seulement : <strong>-30% sur tous nos smoothies</strong></p>
-    <span class="badge badge-offer p-3">🔥 Offre valable jusqu’à minuit !</span>
+    <nav class="navbar navbar-dark bg-dark py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold fs-2" href="#"><span class="text-brand">SMOOTH</span></a>
+            <span class="badge bg-danger fs-6 p-2">Offre Éclair Black Friday</span>
+        </div>
+    </nav>
 
-    <div class="mt-4 countdown" id="countdown"></div>
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-2 fw-bold text-uppercase mb-3">Black Friday</h1>
+            <h2 class="display-5 mb-4">Vos Smoothies préférés à des prix <span class="text-brand text-decoration-underline">jamais vus</span> !</h2>
+            
+            <div class="bg-brand text-white d-inline-block px-5 py-3 rounded-pill mb-5">
+                <span class="fs-1 fw-bold">-30% SUR TOUT LE SITE</span>
+            </div>
 
-    <a href="#products" class="btn btn-light btn-lg mt-4 fw-bold">Profiter de l’offre</a>
-</section>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-6 col-lg-5">
+                    <div class="countdown-box shadow-lg">
+                        <h4 class="mb-3">L'offre se termine dans :</h4>
+                        <div id="countdown" class="display-4 fw-bold text-brand">--:--:--</div>
+                        <p class="mt-2 mb-0 text-muted">Jusqu'à minuit seulement !</p>
+                    </div>
+                </div>
+            </div>
 
-<!-- PRODUITS -->
-<section id="products" class="container py-5">
-    <h2 class="text-center mb-4 fw-bold">Nos Best-Sellers</h2>
+            <a href="#produits" class="btn btn-brand rounded-pill btn-lg">J'en profite maintenant</a>
+        </div>
+    </header>
 
-    <div class="row g-4">
-
-        <div class="col-md-4">
-            <div class="product-card p-3 shadow rounded text-center">
-                <img src="https://images.unsplash.com/photo-1576402187878-974f70c890ad?auto=format&fit=crop&w=800&q=80" class="img-fluid mb-3">
-                <h4>Smoothie Fraise Boost</h4>
-                <p class="text-muted">Un shot d’énergie fruitée.</p>
-                <p class="fw-bold">4,90€ <span class="text-danger">→ 3,43€</span></p>
-                <button class="btn btn-primary w-100">Ajouter au panier</button>
+    <section class="py-5 bg-dark">
+        <div class="container text-center">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <h3 class="text-brand fw-bold">100% Naturel</h3>
+                        <p>Des fruits frais, sans sucres ajoutés. Juste le meilleur de la nature.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <h3 class="text-brand fw-bold">Prix Défiant Toute Concurrence</h3>
+                        <p>Du premium à petit prix. Et avec -30% aujourd'hui, c'est presque donné.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <h3 class="text-brand fw-bold">Livraison Express</h3>
+                        <p>Commandez avant minuit, recevez votre cure vitaminée dès demain.</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="col-md-4">
-            <div class="product-card p-3 shadow rounded text-center">
-                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" class="img-fluid mb-3">
-                <h4>Green Detox</h4>
-                <p class="text-muted">Purifie & revitalise.</p>
-                <p class="fw-bold">5,50€ <span class="text-danger">→ 3,85€</span></p>
-                <button class="btn btn-primary w-100">Ajouter au panier
+    <section id="produits" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Nos Best-Sellers (Stock Limité)</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-white text-center p-3 shadow">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">Pack Détox (6x)</h4>
+                            <p class="card-text text-muted">Pomme, Kiwi, Épinard, Gingembre</p>
+                            <div class="my-3">
+                                <span class="price-strike">19,90 €</span><br>
+                                <span class="price-new">13,93 €</span>
+                            </div>
+                            <button class="btn btn-outline-light w-100">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-white text-center p-3 shadow" style="border-color: #ff3366;">
+                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
+                            Le plus populaire
+                        </span>
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold text-brand">Cure Énergie (12x)</h4>
+                            <p class="card-text text-muted">Mangue, Passion, Orange, Curcuma</p>
+                            <div class="my-3">
+                                <span class="price-strike">34,90 €</span><br>
+                                <span class="price-new">24,43 €</span>
+                            </div>
+                            <button class="btn btn-brand w-100">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-white text-center p-3 shadow">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold">Pack Antioxydant (6x)</h4>
+                            <p class="card-text text-muted">Fruits rouges, Grenade, Betterave</p>
+                            <div class="my-3">
+                                <span class="price-strike">21,90 €</span><br>
+                                <span class="price-new">15,33 €</span>
+                            </div>
+                            <button class="btn btn-outline-light w-100">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <footer class="bg-black text-center py-5 border-top border-dark">
+        <div class="container">
+            <h3 class="fw-bold mb-3">Ne laissez pas passer cette occasion !</h3>
+            <p class="mb-4">À minuit tapante, les prix reviennent à la normale.</p>
+            <a href="#produits" class="btn btn-brand rounded-pill btn-lg px-5">Je commande mes SMOOTH</a>
+            <p class="mt-5 text-muted small">&copy; 2026 SMOOTH. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(23, 59, 59, 999); // Minuit aujourd'hui
+
+            const diff = midnight - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = "OFFRE TERMINÉE";
+                return;
+            }
+
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Formater avec un 0 devant si < 10
+            const h = hours < 10 ? "0" + hours : hours;
+            const m = minutes < 10 ? "0" + minutes : minutes;
+            const s = seconds < 10 ? "0" + seconds : seconds;
+
+            document.getElementById('countdown').innerHTML = `${h}:${m}:${s}`;
+        }
+
+        // Mettre à jour chaque seconde
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Appel initial
+    </script>
+</body>
+</html>
