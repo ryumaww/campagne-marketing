@@ -14,7 +14,7 @@
             color: #ffffff;
         }
         .text-brand {
-            color: #ff3366; /* Magenta vif pour le contraste */
+            color: #ff3366;
         }
         .bg-brand {
             background-color: #ff3366;
@@ -58,11 +58,11 @@
         .card {
             background-color: #1e1e1e;
             border: 1px solid #333;
-            overflow: hidden; /* Pour que l'image respecte les bords arrondis */
+            overflow: hidden;
         }
         .card-img-top {
-            height: 250px; /* Hauteur fixe pour l'uniformité */
-            object-fit: cover; /* Recadre l'image pour remplir l'espace */
+            height: 250px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -129,7 +129,7 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100 text-white text-center p-0 shadow">
-                        <img src="images/smoothie-detox.jpg" class="card-img-top" alt="Smoothie Détox Vert">
+                        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Smoothie Détox Vert">
                         <div class="card-body p-3">
                             <h4 class="card-title fw-bold">Pack Détox (6x)</h4>
                             <p class="card-text text-muted">Pomme, Kiwi, Épinard, Gingembre</p>
@@ -146,7 +146,7 @@
                         <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger" style="z-index: 10;">
                             Le plus populaire
                         </span>
-                        <img src="images/smoothie-energie.jpg" class="card-img-top" alt="Smoothie Énergie Orange">
+                        <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Smoothie Énergie Orange">
                         <div class="card-body p-3">
                             <h4 class="card-title fw-bold text-brand">Cure Énergie (12x)</h4>
                             <p class="card-text text-muted">Mangue, Passion, Orange, Curcuma</p>
@@ -160,7 +160,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 text-white text-center p-0 shadow">
-                        <img src="images/smoothie-antioxydant.jpg" class="card-img-top" alt="Smoothie Antioxydant Rouge">
+                        <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Smoothie Antioxydant Rouge">
                         <div class="card-body p-3">
                             <h4 class="card-title fw-bold">Pack Antioxydant (6x)</h4>
                             <p class="card-text text-muted">Fruits rouges, Grenade, Betterave</p>
@@ -191,7 +191,7 @@
         function updateCountdown() {
             const now = new Date();
             const midnight = new Date();
-            midnight.setHours(23, 59, 59, 999); // Minuit aujourd'hui
+            midnight.setHours(23, 59, 59, 999);
 
             const diff = midnight - now;
 
@@ -204,7 +204,6 @@
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            // Formater avec un 0 devant si < 10
             const h = hours < 10 ? "0" + hours : hours;
             const m = minutes < 10 ? "0" + minutes : minutes;
             const s = seconds < 10 ? "0" + seconds : seconds;
@@ -212,9 +211,8 @@
             document.getElementById('countdown').innerHTML = `${h}:${m}:${s}`;
         }
 
-        // Mettre à jour chaque seconde
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // Appel initial
+        updateCountdown();
     </script>
 </body>
 </html>
