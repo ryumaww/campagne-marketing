@@ -171,6 +171,21 @@
         .included-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
         .included-card p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
 
+        /* --- Reviews Section --- */
+        .reviews { padding: 80px 0 100px; background-color: var(--bg-dark); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .review-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 40px 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .review-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .review-stars { color: var(--accent); font-size: 20px; margin-bottom: 20px; letter-spacing: 2px; }
+        .review-card p { font-size: 14px; color: var(--text-muted); font-style: italic; margin-bottom: 25px; line-height: 1.8; }
+        .review-author { font-size: 14px; font-weight: 600; font-family: 'Playfair Display', serif; color: var(--text-main); }
+
         /* --- Form Section --- */
         .contact-section {
             position: relative; padding: 120px 0 50px;
@@ -227,7 +242,13 @@
         .chat-input button { background: var(--accent); color: #000; border: none; padding: 0 20px; cursor: pointer; font-weight: 800; text-transform: uppercase; font-size: 12px; }
 
         /* --- Responsive --- */
-        @media (max-width: 992px) { .about-content { flex-direction: column; } .about-text { position: static; margin-bottom: 40px; } .included-grid { grid-template-columns: repeat(2, 1fr); } .hero-cards { flex-wrap: wrap; justify-content: center; } .bf-badge { top: 30%; } }
+        @media (max-width: 992px) { 
+            .about-content { flex-direction: column; } 
+            .about-text { position: static; margin-bottom: 40px; } 
+            .included-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); } 
+            .hero-cards { flex-wrap: wrap; justify-content: center; } 
+            .bf-badge { top: 30%; } 
+        }
         @media (max-width: 768px) {
             header { top: 60px; } header nav { display: none; }
             .giant-text { font-size: 18vw; top: 15%; } .bf-badge { width: 90%; padding: 15px; }
@@ -235,6 +256,7 @@
             footer { flex-direction: column; gap: 20px; text-align: center; } .timeline-item:nth-child(even) img { margin-left: 0; }
             .promo-banner { font-size: 12px; } .timer-box { display: block; width: fit-content; margin: 10px auto 0; }
             .chat-window { right: 10px; left: 10px; width: auto; bottom: 100px; }
+            .reviews-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -252,6 +274,7 @@
                 <ul>
                     <li><a href="#about">À propos</a></li>
                     <li><a href="#included">Inclus</a></li>
+                    <li><a href="#reviews">Avis</a></li>
                     <li><a href="#contact">Contacts</a></li>
                 </ul>
             </nav>
@@ -269,7 +292,7 @@
         <div class="giant-text">BLACK FRIDAY</div>
         
         <div class="bf-badge">
-            <h2>Voyager à Zanzibar</h1>
+            <h2>Voyager à Zanzibar</h2>
             <p>-30% aujourd'hui Seulement</p>
         </div>
         
@@ -363,6 +386,30 @@
         </div>
     </section>
 
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Avis de nos voyageurs</h2>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Un voyage tout simplement inoubliable. L'organisation était parfaite de A à Z, les hôtels étaient sublimes et notre guide local était exceptionnel. Merci à l'équipe !"</p>
+                    <div class="review-author">— Marie & Thomas, Paris</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Profiter de l'offre du Black Friday a été la meilleure décision. Stone Town est magique, et la journée en Safari Blue restera gravée dans nos mémoires à jamais."</p>
+                    <div class="review-author">— Julien D., Lyon</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Un service digne d'un vrai 5 étoiles. Tout était extrêmement fluide, de l'accueil chaleureux à l'aéroport jusqu'au dernier jour sur la plage. Je recommande les yeux fermés."</p>
+                    <div class="review-author">— Sophie V., Genève</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact-section" id="contact">
         <div class="container">
             
@@ -390,6 +437,7 @@
                     <ul>
                         <li><a href="#about">À propos</a></li>
                         <li><a href="#included">Inclus</a></li>
+                        <li><a href="#reviews">Avis</a></li>
                         <li><a href="#contact">Contacts</a></li>
                     </ul>
                 </nav>
