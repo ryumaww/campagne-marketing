@@ -3,135 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>innocent smoothies - little tasty drinks</title>
+    <title>SMOOTH - Black Friday -30%</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- Styles de base et Reset --- */
+        /* --- Styles de base --- */
         :root {
-            /* Palette de couleurs */
             --bg-blue: #8FD8E7;
-            --bg-beige: #F8F4E8; /* Texture de papier recyclé simulée */
+            --bg-beige: #F8F4E8;
             --bg-green: #D6EAD6;
             --text-dark: #4A4A4A;
             --accent-orange: #F3A953;
-            --accent-fuchsia: #E25850; /* Plus rouge/magenta */
+            --accent-fuchsia: #E25850;
             --accent-green: #8BB877;
         }
 
-        * { margin: 0; padding: 0; box-shadow: none; outline: none; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background-color: var(--bg-beige); line-height: 1.6; }
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background-color: var(--bg-beige); line-height: 1.6; overflow-x: hidden; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
         a { text-decoration: none; color: inherit; transition: all 0.2s; }
 
         /* --- Typographie --- */
-        h1 { font-family: 'Amatic SC', cursive; font-size: 56px; font-weight: 700; color: var(--text-dark); margin-bottom: 20px; line-height: 1.1; }
+        h1 { font-family: 'Amatic SC', cursive; font-size: 64px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; line-height: 1; }
         h2 { font-family: 'Merriweather', serif; font-size: 32px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
         h3 { font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 15px; }
         .amatic { font-family: 'Amatic SC', cursive; }
         .merriweather { font-family: 'Merriweather', serif; }
 
         /* --- Boutons --- */
-        .btn { display: inline-block; padding: 12px 24px; font-family: 'Amatic SC', cursive; font-size: 20px; font-weight: 700; border-radius: 6px; cursor: pointer; }
+        .btn { display: inline-block; padding: 10px 25px; font-family: 'Amatic SC', cursive; font-size: 24px; font-weight: 700; border-radius: 8px; cursor: pointer; border: none; }
         .btn-primary { background-color: var(--text-dark); color: white; }
-        .btn-primary:hover { background-color: #333; }
-        .btn-secondary { background-color: white; color: var(--text-dark); border: 2px solid var(--accent-orange); }
-        .btn-secondary:hover { background-color: #f0f0f0; }
-        .btn-vote { background-color: var(--accent-fuchsia); color: white; font-size: 24px; }
-        .btn-vote:hover { background-color: #c94a43; }
+        .btn-primary:hover { background-color: #333; transform: scale(1.05); }
+        .btn-vote { background-color: var(--accent-fuchsia); color: white; font-size: 28px; box-shadow: 0 4px 0px #b83d36; margin-top: 15px; }
+        .btn-vote:hover { transform: translateY(2px); box-shadow: 0 2px 0px #b83d36; }
 
         /* --- En-tête --- */
-        header { background-color: var(--bg-blue); padding: 20px 0; border-bottom: 3px solid #6cbcd0; }
+        header { background-color: var(--bg-blue); padding: 15px 0; border-bottom: 3px dashed rgba(255,255,255,0.5); }
         .logo { text-align: center; }
-        .logo .innocent { font-family: 'Merriweather', serif; font-size: 28px; font-weight: 700; display: block; }
-        .logo .slogan { font-size: 12px; display: block; opacity: 0.8; }
-        nav ul { display: flex; gap: 20px; list-style: none; }
-        nav a { font-size: 14px; text-transform: lowercase; }
+        .logo .brand-name { font-family: 'Merriweather', serif; font-size: 32px; font-weight: 700; display: block; color: var(--text-dark); }
+        .logo .slogan { font-size: 14px; display: block; opacity: 0.8; font-family: 'Amatic SC', cursive; font-size: 22px; }
+        nav ul { display: flex; gap: 25px; list-style: none; font-family: 'Open Sans', sans-serif; font-weight: 700; }
+        nav a { font-size: 15px; text-transform: lowercase; color: #333; }
         nav a:hover { color: white; }
 
         /* --- Section Hero --- */
-        .hero { background-color: var(--bg-blue); padding: 60px 0; text-align: center; position: relative; overflow: hidden; }
+        .hero { background-color: var(--bg-blue); padding: 60px 0 80px; text-align: center; position: relative; }
         .hero .container { flex-direction: column; align-items: center; }
-        .smoothies-wrapper { position: relative; display: flex; justify-content: center; gap: -20px; margin-bottom: 40px; }
-        .smoothie-bottle { width: 160px; height: auto; margin: 0 -10px; transform: rotate(-5deg); filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); }
-        .fresh-fruits-strawberries { position: absolute; left: -30px; bottom: -20px; width: 60px; transform: rotate(10deg); }
-        .fresh-fruits-strawberries:nth-child(2) { left: 10px; }
-        .hero-content { max-width: 600px; }
-        .fresh-fruits { position: absolute; right: 20px; bottom: 20px; display: flex; gap: 10px; }
-        .fresh-fruits-grapes { width: 60px; transform: rotate(-10deg); }
-        .fresh-fruits-oranges { width: 100px; transform: rotate(10deg); }
+        
+        /* Astuce pour les images : on leur donne une forme de pilule pour le style smoothie */
+        .smoothies-wrapper { position: relative; display: flex; justify-content: center; margin-bottom: 30px; z-index: 2; }
+        .smoothie-bottle { 
+            width: 130px; 
+            height: 280px; 
+            object-fit: cover; 
+            border-radius: 65px; /* Forme de pilule */
+            border: 6px solid white; 
+            margin: 0 -15px; 
+            transform: rotate(-3deg); 
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15); 
+            background-color: white;
+        }
+        .smoothie-bottle:nth-child(2) { transform: rotate(4deg) scale(1.05); z-index: 3; }
+        .smoothie-bottle:nth-child(3) { transform: rotate(-5deg); }
 
-        /* --- Section Healthy Stuff --- */
-        .healthy-stuff { background-color: var(--bg-beige); padding: 80px 0; text-align: center; }
-        .healthy-stuff h2 { text-transform: lowercase; }
-        .healthy-stuff .subtitle { font-size: 14px; font-style: italic; color: #777; margin-bottom: 40px; display: block; }
-        .gouttes-wrapper { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; }
-        .goutte { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 90px; height: 110px; border-radius: 45px 45px 10px 10px; color: white; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.1)); position: relative;}
-        .goutte-orange { background-color: var(--accent-orange); }
-        .goutte-rouge { background-color: #E25850; }
-        .goutte-vert { background-color: var(--accent-green); }
-        .goutte .number { font-family: 'Merriweather', serif; font-size: 48px; font-weight: 700; line-height: 1; margin-bottom: 5px; }
-        .goutte .label { font-size: 12px; }
-        .healthy-stuff .content { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; position: relative; padding-bottom: 80px;}
+        .hero-content { max-width: 650px; z-index: 2; position: relative; }
+        .hero-content p { font-size: 18px; margin-bottom: 20px; }
+        
+        /* Fruits ronds décoratifs */
+        .fruit-decor { position: absolute; border-radius: 50%; border: 4px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); object-fit: cover; z-index: 1; }
+        .f-strawberry { width: 80px; height: 80px; left: 15%; top: 50%; transform: rotate(-15deg); }
+        .f-orange { width: 110px; height: 110px; right: 12%; bottom: 10%; transform: rotate(10deg); }
 
-        /* --- Section Competition --- */
-        .competition { background-color: var(--bg-beige); padding: 60px 0 80px; text-align: center; }
-        .competition-wrapper { background-color: #A3D8EC; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: inline-flex; flex-direction: column; align-items: center; gap: 15px; border: 4px solid #fff;}
-        .competition-logo-amatic { font-family: 'Amatic SC', cursive; font-size: 48px; color: white; text-shadow: 2px 2px 0px rgba(0,0,0,0.2); line-height: 1; margin-bottom: -5px;}
-        .competition-subtitle { font-size: 14px; max-width: 250px; display: block;}
+        /* --- Section Info / Black Friday --- */
+        .healthy-stuff { background-color: var(--bg-beige); padding: 60px 0; text-align: center; position: relative; }
+        
+        .gouttes-wrapper { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; margin-top: -30px; }
+        .goutte { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100px; height: 120px; border-radius: 50px 50px 15px 15px; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .goutte-orange { background-color: var(--accent-orange); transform: rotate(-5deg); }
+        .goutte-rouge { background-color: var(--accent-fuchsia); transform: translateY(-10px); }
+        .goutte-vert { background-color: var(--accent-green); transform: rotate(5deg); }
+        .goutte .number { font-family: 'Merriweather', serif; font-size: 42px; font-weight: 700; line-height: 1; margin-bottom: 5px; }
+        .goutte .label { font-size: 14px; font-weight: bold; }
+
+        /* --- Section Timer Black Friday --- */
+        .competition-wrapper { 
+            background-color: #A3D8EC; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08); 
+            display: inline-flex; 
+            flex-direction: column; 
+            align-items: center; 
+            border: 6px solid #fff;
+            max-width: 500px;
+            margin: 0 auto;
+            transform: rotate(-2deg);
+        }
+        .competition-logo-amatic { font-family: 'Amatic SC', cursive; font-size: 64px; color: var(--accent-fuchsia); line-height: 1; margin-bottom: 10px; }
+        .timer-box { font-family: 'Merriweather', serif; font-size: 40px; font-weight: 700; color: white; background: var(--text-dark); padding: 10px 30px; border-radius: 10px; letter-spacing: 2px; }
 
         /* --- Pied de page --- */
-        footer { background-color: var(--bg-green); padding: 50px 0; border-top: 3px solid #A4C6A4; position: relative; margin-top: 20px; }
-        footer::before { content: ""; position: absolute; top: -15px; left: 0; width: 100%; height: 20px; background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlssogAAAADBJREFUGNNjYGRkAAMGEAMjH5idjYGRjYGRjYFdgYFdgYGRhYFdgYGRhYFdgYGRhYEfEwAA5AAn9K9I9AAAAABJRU5ErkJggg==') repeat-x; } /* Bordure déchirée simple */
-        footer .container { gap: 30px; text-align: left; }
+        footer { background-color: var(--bg-green); padding: 50px 0; margin-top: 40px; border-top: 4px dashed #A4C6A4; }
+        footer .container { gap: 30px; align-items: flex-start; }
         .footer-column { flex: 1; }
-        .footer-column h3 { font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px;}
-        .footer-column p { font-size: 14px; line-height: 1.5; color: #666;}
-        .apple-icon { width: 50px; height: auto; }
+        .footer-column p { font-size: 14px; color: #555; }
+        .apple-icon { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; border: 3px solid white; margin-top: 10px; }
 
-        /* --- Graphiques annexes (nuages, étoiles, etc.) --- */
-        .nuage { position: absolute; width: 80px; height: 40px; background-color: rgba(255,255,255,0.8); border-radius: 50px; opacity: 0.8; }
-        .nuage::after { content: ""; position: absolute; top: -15px; left: 15px; width: 30px; height: 30px; background-color: rgba(255,255,255,0.8); border-radius: 50%; }
-        .nuage-1 { top: 50px; left: 10%; }
-        .nuage-2 { top: 120px; right: 15%; width: 100px; height: 50px; }
-        .nuage-2::after { width: 40px; height: 40px; top: -20px; }
-        .étoile { position: absolute; width: 10px; height: 10px; background-color: white; transform: rotate(45deg); border-radius: 2px; }
-        .étoile::after { content: ""; position: absolute; top: 0; left: 0; width: 10px; height: 10px; background-color: white; transform: rotate(-90deg); border-radius: 2px; }
-        .étoile-1 { top: 80px; right: 10%; }
-        .étoile-2 { top: 200px; left: 15%; }
-
-        /* --- Réactivité (Responsive Design) --- */
-        @media (max-width: 992px) {
-            h1 { font-size: 48px; }
-            .smoothie-bottle { width: 130px; }
-        }
-
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            header .container { flex-direction: column; text-align: center; }
-            nav ul { flex-direction: column; gap: 5px; margin-top: 15px; }
-            .smoothies-wrapper { flex-wrap: wrap; justify-content: center; gap: 0px; }
-            .smoothie-bottle { width: 110px; margin: 0; transform: rotate(0deg); filter: none; margin: 10px;}
-            .fresh-fruits-strawberries { position: static; display: none; }
-            h1 { font-size: 36px; }
-            .fresh-fruits { position: static; margin-top: 20px; justify-content: center; gap: 15px; }
-            .fresh-fruits-grapes { width: 50px; }
-            .fresh-fruits-oranges { width: 80px; }
-            .gouttes-wrapper { flex-wrap: wrap; gap: 15px; }
-            .goutte { width: 45%; border-radius: 10px; height: auto; padding: 15px; }
-            .goutte .number { font-size: 36px; }
-            .competition { padding-bottom: 60px; }
-            .competition-wrapper { border-radius: 10px; padding: 20px; }
-            footer::before { display: none; } /* Enlever la bordure déchirée sur mobile */
-            footer .container { flex-direction: column; gap: 30px; text-align: center; }
+            header .container { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 48px; }
+            .smoothie-bottle { width: 100px; height: 220px; border-radius: 50px; margin: 0 -5px; }
+            .fruit-decor { display: none; } /* On cache les fruits flottants sur mobile */
+            .gouttes-wrapper { flex-wrap: wrap; }
+            .timer-box { font-size: 28px; }
+            footer .container { flex-direction: column; text-align: center; }
         }
-
-        @media (max-width: 480px) {
-            .goutte { width: 100%; }
-            .competition-wrapper { border: 2px solid #fff; border-radius: 6px; }
-            .competition-logo-amatic { font-size: 36px; }
-        }
-
     </style>
 </head>
 <body>
@@ -139,18 +128,16 @@
     <header>
         <div class="container">
             <div class="logo">
-                <span class="innocent merriweather">innocent</span>
-                <span class="slogan open-sans">little tasty drinks</span>
+                <span class="brand-name">SMOOTH</span>
+                <span class="slogan">little tasty drinks</span>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">things we make</a></li>
-                    <li><a href="#">us</a></li>
-                    <li><a href="#">blog</a></li>
-                    <li><a href="#">family</a></li>
-                    <li><a href="#">kids</a></li>
-                    <li><a href="#">health</a></li>
+                    <li><a href="#">accueil</a></li>
+                    <li><a href="#">nos recettes</a></li>
+                    <li><a href="#">notre histoire</a></li>
+                    <li><a href="#">famille</a></li>
+                    <li><a href="#">santé</a></li>
                 </ul>
             </nav>
         </div>
@@ -158,87 +145,97 @@
 
     <main>
         <section class="hero">
-            <div class="nuage nuage-1"></div>
-            <div class="nuage nuage-2"></div>
-            <div class="étoile étoile-1"></div>
-            <div class="étoile étoile-2"></div>
+            <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=200&q=80" alt="Fraises" class="fruit-decor f-strawberry">
+            <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=200&q=80" alt="Oranges" class="fruit-decor f-orange">
             
             <div class="container">
                 <div class="smoothies-wrapper">
-                    <img src="https://via.placeholder.com/160x400/FF0000/FFFFFF?text=Fraises" alt="Strawberry & Bananas smoothie" class="smoothie-bottle">
-                    <img src="https://via.placeholder.com/160x400/FFA500/FFFFFF?text=Mangues" alt="Mango & Passion Fruits smoothie" class="smoothie-bottle">
-                    <img src="https://via.placeholder.com/160x400/008000/FFFFFF?text=Kiwis" alt="Kiwis, Apples & Limes smoothie" class="smoothie-bottle">
-                    
-                    <img src="https://via.placeholder.com/60/FF0000/FFFFFF?text=🍓" alt="Fraises fraîches" class="fresh-fruits-strawberries">
-                </div>
-                <div class="hero-content">
-                    <h1>delicious smoothies for everyone</h1>
-                    <p class="open-sans">We love our pure fruit smoothies and we know you'll love them too. That's why we're giving one to you absolutely free.</p>
-                    <a href="#" class="btn btn-primary amatic">find out more</a>
+                    <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=300&q=80" alt="Smoothie Vert" class="smoothie-bottle">
+                    <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=300&q=80" alt="Smoothie Orange" class="smoothie-bottle">
+                    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=300&q=80" alt="Smoothie Rouge" class="smoothie-bottle">
                 </div>
                 
-                <div class="fresh-fruits">
-                    <img src="https://via.placeholder.com/100/FFA500/FFFFFF?text=🍊" alt="Oranges fraîches" class="fresh-fruits-oranges">
-                    <img src="https://via.placeholder.com/60/008000/FFFFFF?text=🍇" alt="Raisins frais" class="fresh-fruits-grapes">
+                <div class="hero-content">
+                    <h1>black friday chez smooth</h1>
+                    <p>On adore faire des smoothies pur fruit, et on sait que vous allez les adorer aussi. C'est pourquoi on casse les prix aujourd'hui, et seulement aujourd'hui !</p>
+                    <a href="#offre" class="btn btn-primary">j'en profite !</a>
                 </div>
             </div>
         </section>
 
-        <section class="healthy-stuff">
-            <div class="container">
-                <h2>healthy stuff</h2>
-                <span class="subtitle merriweather">Setting the record straight.</span>
+        <section class="healthy-stuff" id="offre">
+            <div class="container" style="flex-direction: column;">
                 
                 <div class="gouttes-wrapper">
                     <div class="goutte goutte-orange">
-                        <span class="number merriweather">5</span>
-                        <span class="label open-sans">a day?</span>
+                        <span class="number">100</span>
+                        <span class="label">% Naturel</span>
                     </div>
                     <div class="goutte goutte-rouge">
-                        <span class="number merriweather">0</span>
-                        <span class="label open-sans">a day?</span>
+                        <span class="number">-30</span>
+                        <span class="label">% de Réduc</span>
                     </div>
                     <div class="goutte goutte-vert">
-                        <span class="number merriweather">8</span>
-                        <span class="label open-sans">a day?</span>
+                        <span class="number">24</span>
+                        <span class="label">h Chrono</span>
                     </div>
                 </div>
-                
-                <div class="content">
-                    <p class="description open-sans">Here at Fruit Towers we're all about helping people get more good stuff into them. That's why we've just launched a new campaign called 'Drive for 5'.</p>
-                    <a href="#" class="btn btn-secondary amatic">find out more</a>
-                </div>
-            </div>
-        </section>
 
-        <section class="competition">
-            <div class="container">
                 <div class="competition-wrapper">
-                    <h2>Cool competition</h2>
-                    <span class="competition-logo-amatic amatic">Mini Movies</span>
-                    <span class="competition-subtitle merriweather text-white">THE INNOCENT MINI MOVIES COMPETITION</span>
-                    <a href="#" class="btn btn-vote amatic">VOTE NOW</a>
+                    <h2 style="margin:0;">Vite, ça disparaît !</h2>
+                    <span class="competition-logo-amatic">-30% SUR TOUT</span>
+                    <p style="margin-bottom: 15px;">L'offre exclusive Black Friday se termine à minuit.</p>
+                    <div id="countdown" class="timer-box">--:--:--</div>
+                    <a href="#" class="btn btn-vote">COMMANDER MES SMOOTH</a>
                 </div>
+
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-column twitter">
-                <h3>Twitter</h3>
-                <p>“We've just launched a cool mini movie...”</p>
+            <div class="footer-column">
+                <h3>Notre promesse</h3>
+                <p>Pas de sucres ajoutés, pas de concentrés, juste des fruits mixés avec amour pour vous donner la pêche toute la journée.</p>
             </div>
-            <div class="footer-column things-we-make">
-                <h3>Things we make</h3>
-                <img src="https://via.placeholder.com/50/FF0000/FFFFFF?text=🍎" alt="Apple icon" class="apple-icon">
+            <div class="footer-column" style="text-align: center;">
+                <h3>Ce qu'on met dedans</h3>
+                <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6fac6?auto=format&fit=crop&w=150&q=80" alt="Pomme" class="apple-icon">
             </div>
-            <div class="footer-column join-family">
-                <h3>Join the family</h3>
-                <p>We're a big, happy family at innocent and we...</p>
+            <div class="footer-column">
+                <h3>Rejoignez la famille</h3>
+                <p>On est une grande famille heureuse chez SMOOTH. Suivez-nous sur les réseaux pour ne rater aucune recette !</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(23, 59, 59, 999);
+
+            const diff = midnight - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = "TERMINÉ !";
+                return;
+            }
+
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const h = hours < 10 ? "0" + hours : hours;
+            const m = minutes < 10 ? "0" + minutes : minutes;
+            const s = seconds < 10 ? "0" + seconds : seconds;
+
+            document.getElementById('countdown').innerHTML = `${h}:${m}:${s}`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
