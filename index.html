@@ -3,342 +3,484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMOOTH - Black Friday -30%</title>
+    <title>Zanzibar Tours - Évasion Tropicale</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- Styles de base --- */
+        /* --- Variables & Reset --- */
         :root {
-            --bg-blue: #8FD8E7;
-            --bg-beige: #F8F4E8;
-            --bg-green: #D6EAD6;
-            --text-dark: #4A4A4A;
-            --accent-orange: #F3A953;
-            --accent-fuchsia: #E25850;
-            --accent-green: #8BB877;
+            --bg-dark: #0d0d0d;
+            --bg-light-dark: #1a1a1a;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --accent: #d4af37; /* Or / Sable pour Zanzibar */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background-color: var(--bg-beige); line-height: 1.6; overflow-x: hidden; }
-        .container { width: 90%; max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
-        a { text-decoration: none; color: inherit; transition: all 0.2s; }
-
-        /* --- Typographie --- */
-        h1 { font-family: 'Amatic SC', cursive; font-size: 64px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; line-height: 1; }
-        h2 { font-family: 'Merriweather', serif; font-size: 32px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
-        h3 { font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 15px; }
-        .amatic { font-family: 'Amatic SC', cursive; }
-        .merriweather { font-family: 'Merriweather', serif; }
-
-        /* --- Boutons --- */
-        .btn { display: inline-block; padding: 10px 25px; font-family: 'Amatic SC', cursive; font-size: 24px; font-weight: 700; border-radius: 8px; cursor: pointer; border: none; }
-        .btn-primary { background-color: var(--text-dark); color: white; }
-        .btn-primary:hover { background-color: #333; transform: scale(1.05); }
-        .btn-vote { background-color: var(--accent-fuchsia); color: white; font-size: 24px; box-shadow: 0 4px 0px #b83d36; }
-        .btn-vote:hover { transform: translateY(2px); box-shadow: 0 2px 0px #b83d36; }
-
-        /* --- Bannière Promo Collante (Top) --- */
-        .promo-banner {
-            background-color: var(--accent-fuchsia);
-            color: white;
-            text-align: center;
-            padding: 12px 20px;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 700;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            font-size: 16px;
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        .promo-banner .timer-box {
-            font-family: 'Merriweather', serif;
-            background: white;
-            color: var(--accent-fuchsia);
-            padding: 4px 12px;
-            border-radius: 6px;
-            margin-left: 10px;
+
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        a:hover { color: var(--accent); }
+        ul { list-style: none; }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- UI Elements --- */
+        .btn {
             display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border: 1px solid var(--glass-border);
+            padding: 10px 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: var(--text-main);
+            color: var(--bg-dark);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+        }
+        .section-title::before, .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--glass-border);
+            margin: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            position: absolute;
+            top: 0; left: 0; width: 100%;
+            padding: 30px 0;
+            z-index: 100;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-weight: 800; font-size: 18px; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--accent); }
+        
+        nav ul { display: flex; gap: 40px; font-size: 14px; font-weight: 300; }
+        
+        .header-right { display: flex; align-items: center; gap: 30px; }
+        .socials { display: flex; gap: 15px; font-size: 14px; }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 80px;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.1) 0%, rgba(13,13,13,0.8) 70%, var(--bg-dark) 100%),
+                        url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        }
+
+        .giant-text {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-cards {
+            display: flex;
+            gap: 20px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .hero-card {
+            width: 140px;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease;
+        }
+        .hero-card:hover { transform: translateY(-10px); }
+        .hero-card img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-card .overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            padding: 15px 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .hero-card.text-only {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px 15px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        /* --- About Section (Timeline) --- */
+        .about {
+            padding: 100px 0;
+            background-color: var(--bg-dark);
+            position: relative;
+        }
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        .about-text {
+            flex: 1;
             font-size: 18px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            font-weight: 300;
+            color: var(--text-muted);
+            position: sticky;
+            top: 100px;
+        }
+        .about-text span { color: var(--accent); font-style: italic; font-family: 'Playfair Display', serif;}
+
+        .timeline {
+            flex: 1;
+            border-left: 1px solid var(--glass-border);
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -45px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--text-main);
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        .timeline-title { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+        .timeline-subtitle { font-size: 24px; font-weight: 800; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
+        .timeline-item img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 5px;
+            border: 1px solid var(--glass-border);
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .timeline-item:hover img { opacity: 1; }
+
+        /* Offset some images to match the design's staggered look */
+        .timeline-item:nth-child(even) img {
+            margin-left: 50px;
         }
 
-        /* --- En-tête --- */
-        header { background-color: var(--bg-blue); padding: 15px 0; border-bottom: 3px dashed rgba(255,255,255,0.5); }
-        .logo { text-align: center; }
-        .logo .brand-name { font-family: 'Merriweather', serif; font-size: 32px; font-weight: 700; display: block; color: var(--text-dark); }
-        .logo .slogan { display: block; opacity: 0.8; font-family: 'Amatic SC', cursive; font-size: 22px; }
-        nav ul { display: flex; gap: 25px; list-style: none; font-family: 'Open Sans', sans-serif; font-weight: 700; }
-        nav a { font-size: 15px; text-transform: lowercase; color: #333; }
-        nav a:hover { color: white; }
-
-        /* --- Section Hero --- */
-        .hero { background-color: var(--bg-blue); padding: 50px 0 80px; text-align: center; position: relative; }
-        .hero .container { flex-direction: column; align-items: center; }
-        .hero-content { max-width: 650px; z-index: 2; position: relative; margin-bottom: 30px; }
-        .hero-content p { font-size: 18px; margin-bottom: 20px; }
-
-        /* --- Gouttes (Bénéfices) --- */
-        .healthy-stuff { background-color: var(--bg-beige); padding: 40px 0 0 0; text-align: center; position: relative; z-index: 5;}
-        .gouttes-wrapper { display: flex; justify-content: center; gap: 30px; margin-top: -60px; margin-bottom: 40px; }
-        .goutte { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100px; height: 120px; border-radius: 50px 50px 15px 15px; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .goutte-orange { background-color: var(--accent-orange); transform: rotate(-5deg); }
-        .goutte-rouge { background-color: var(--accent-fuchsia); transform: translateY(-10px); }
-        .goutte-vert { background-color: var(--accent-green); transform: rotate(5deg); }
-        .goutte .number { font-family: 'Merriweather', serif; font-size: 42px; font-weight: 700; line-height: 1; margin-bottom: 5px; }
-        .goutte .label { font-size: 14px; font-weight: bold; }
-
-        /* --- Section Produits --- */
-        .products-section { padding: 40px 0 80px; background-color: var(--bg-beige); text-align: center; }
-        .products-section h2 { font-family: 'Amatic SC', cursive; font-size: 54px; margin-bottom: 40px; color: var(--text-dark); }
-        .products-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
-        .product-card { 
-            background: white; 
-            border-radius: 20px; 
-            padding: 30px 20px; 
-            width: 320px; 
-            border: 4px dashed var(--bg-blue); 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-            transition: transform 0.3s;
+        /* --- Included Section --- */
+        .included {
+            padding: 80px 0 120px;
+            background-color: var(--bg-dark);
         }
-        .product-card:hover { transform: translateY(-10px); }
-        .product-card img { 
-            width: 140px; 
-            height: 280px; 
-            object-fit: cover; 
-            border-radius: 70px; /* Forme de pilule */
-            border: 5px solid var(--bg-beige); 
-            margin-bottom: 20px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
-        .product-card h3 { font-family: 'Merriweather', serif; font-size: 24px; margin-bottom: 5px; color: var(--text-dark); }
-        .product-card p { font-size: 14px; color: #666; margin-bottom: 15px; min-height: 45px; }
-        .price-container { margin-bottom: 20px; }
-        .old-price { text-decoration: line-through; color: #999; font-size: 16px; margin-right: 10px; }
-        .new-price { color: var(--accent-fuchsia); font-size: 32px; font-weight: bold; font-family: 'Merriweather', serif; }
+        .included-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 30px 20px;
+            transition: background 0.3s ease;
+        }
+        .included-card:hover { background: rgba(255,255,255,0.1); }
+        .included-icon {
+            font-size: 24px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .included-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+        .included-card p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
 
-        /* --- Chatbot UI --- */
-        .chat-btn {
-            position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;
-            background-color: var(--text-dark); color: white; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 28px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border: none; z-index: 9999; transition: transform 0.2s;
+        /* --- Form / Footer Section --- */
+        .contact-section {
+            position: relative;
+            padding: 120px 0 50px;
+            background: linear-gradient(to top, var(--bg-dark) 0%, rgba(13,13,13,0.3) 100%),
+                        url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
         }
-        .chat-btn:hover { transform: scale(1.1); }
         
-        .chat-window {
-            position: fixed; bottom: 90px; right: 20px; width: 320px;
-            background-color: white; border-radius: 15px; border: 3px solid var(--text-dark);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 9999;
-            display: flex; flex-direction: column; overflow: hidden;
-            transform: translateY(20px); opacity: 0; pointer-events: none; transition: all 0.3s ease;
+        .contact-box {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 50px;
+            max-width: 450px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
-        .chat-window.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
+        .contact-box h2 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
         
-        .chat-header {
-            background-color: var(--text-dark); color: white; padding: 15px;
-            font-family: 'Merriweather', serif; font-weight: bold;
-            display: flex; justify-content: space-between; align-items: center;
+        .form-group { margin-bottom: 20px; }
+        .form-group input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--glass-border);
+            padding: 10px 0;
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
         }
-        .close-chat { background: none; border: none; color: white; font-size: 18px; cursor: pointer; }
-        .chat-body { padding: 20px; background-color: #f9f9f9; height: 200px; overflow-y: auto; }
-        .chat-msg { background-color: var(--bg-blue); color: var(--text-dark); padding: 12px; border-radius: 15px 15px 15px 0; font-size: 14px; margin-bottom: 10px; display: inline-block; }
-        .chat-input { display: flex; border-top: 1px solid #eee; }
-        .chat-input input { flex: 1; padding: 15px; border: none; outline: none; font-family: 'Open Sans', sans-serif; }
-        .chat-input button { background-color: var(--accent-fuchsia); color: white; border: none; padding: 0 20px; cursor: pointer; font-weight: bold; }
+        .form-group input:focus { border-bottom-color: var(--accent); }
+        .form-group input::placeholder { color: var(--text-muted); }
+        
+        .contact-box .btn {
+            width: 100%;
+            background: var(--text-main);
+            color: var(--bg-dark);
+            margin-top: 10px;
+            padding: 15px;
+        }
 
-        /* --- Pied de page --- */
-        footer { background-color: var(--bg-green); padding: 50px 0; border-top: 4px dashed #A4C6A4; }
-        footer .container { gap: 30px; align-items: flex-start; }
-        .footer-column { flex: 1; }
-        .footer-column p { font-size: 14px; color: #555; }
-        .apple-icon { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; border: 3px solid white; margin-top: 10px; }
+        footer {
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 30px;
+        }
 
         /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .about-content { flex-direction: column; }
+            .about-text { position: static; margin-bottom: 40px; }
+            .included-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-cards { flex-wrap: wrap; justify-content: center; }
+        }
+        
         @media (max-width: 768px) {
-            header .container { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; }
-            h1 { font-size: 48px; }
-            .gouttes-wrapper { flex-wrap: wrap; gap: 15px; }
-            .promo-banner { font-size: 14px; }
-            .promo-banner .timer-box { font-size: 16px; margin-top: 5px; display: block; width: fit-content; margin: 5px auto 0; }
-            .product-card { width: 100%; }
-            footer .container { flex-direction: column; text-align: center; }
-            .chat-window { right: 10px; left: 10px; width: auto; }
+            header nav { display: none; } /* Cacher menu sur mobile pour simplifier */
+            .giant-text { font-size: 20vw; top: 20%; }
+            .section-title { font-size: 22px; }
+            .contact-box { padding: 30px; }
+            footer { flex-direction: column; gap: 20px; text-align: center; }
+            .timeline-item:nth-child(even) img { margin-left: 0; }
         }
     </style>
 </head>
 <body>
 
-    <div class="promo-banner">
-        🔥 ALERTE BLACK FRIDAY : -30% SUR TOUT LE SITE. L'offre se termine dans : 
-        <span id="countdown" class="timer-box">--:--:--</span>
-    </div>
-
     <header>
         <div class="container">
-            <div class="logo">
-                <span class="brand-name">SMOOTH</span>
-                <span class="slogan">little tasty drinks</span>
-            </div>
+            <div class="logo">ZANZIBAR <span>TOURS</span></div>
             <nav>
                 <ul>
-                    <li><a href="#">accueil</a></li>
-                    <li><a href="#produits">nos smoothies</a></li>
-                    <li><a href="#">notre histoire</a></li>
-                    <li><a href="#">santé</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#included">Inclus</a></li>
+                    <li><a href="#contact">Contacts</a></li>
                 </ul>
             </nav>
+            <div class="header-right">
+                <div class="socials">
+                    <a href="#">Fb</a>
+                    <a href="#">Ig</a>
+                </div>
+                <a href="#contact" class="btn">Réserver</a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>black friday chez smooth</h1>
-                    <p>On adore faire des smoothies pur fruit, et on sait que vous allez les adorer aussi. C'est pourquoi on casse les prix aujourd'hui, et seulement aujourd'hui !</p>
-                    <a href="#produits" class="btn btn-primary">Voir les offres</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="healthy-stuff">
-            <div class="container" style="flex-direction: column;">
-                <div class="gouttes-wrapper">
-                    <div class="goutte goutte-orange">
-                        <span class="number">100</span>
-                        <span class="label">% Naturel</span>
-                    </div>
-                    <div class="goutte goutte-rouge">
-                        <span class="number">-30</span>
-                        <span class="label">% de Réduc</span>
-                    </div>
-                    <div class="goutte goutte-vert">
-                        <span class="number">24</span>
-                        <span class="label">h Chrono</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="products-section" id="produits">
-            <div class="container" style="flex-direction: column;">
-                <h2>Nos best-sellers à dévorer</h2>
-                
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=300&q=80" alt="Smoothie Vert">
-                        <h3>Pack Détox (6x)</h3>
-                        <p>Pomme, Kiwi, Épinard, Gingembre. Le coup de fouet idéal pour bien démarrer la journée.</p>
-                        <div class="price-container">
-                            <span class="old-price">19,90 €</span>
-                            <span class="new-price">13,93 €</span>
-                        </div>
-                        <button class="btn btn-vote w-100" style="width: 100%;">Ajouter au panier</button>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=300&q=80" alt="Smoothie Orange">
-                        <h3>Cure Énergie (12x)</h3>
-                        <p>Mangue, Passion, Orange, Curcuma. Votre dose de soleil et de vitamines en bouteille.</p>
-                        <div class="price-container">
-                            <span class="old-price">34,90 €</span>
-                            <span class="new-price">24,43 €</span>
-                        </div>
-                        <button class="btn btn-vote w-100" style="width: 100%;">Ajouter au panier</button>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=300&q=80" alt="Smoothie Rouge">
-                        <h3>Pack Antioxydant (6x)</h3>
-                        <p>Fruits rouges, Grenade, Betterave. Le bouclier ultime pour protéger votre corps.</p>
-                        <div class="price-container">
-                            <span class="old-price">21,90 €</span>
-                            <span class="new-price">15,33 €</span>
-                        </div>
-                        <button class="btn btn-vote w-100" style="width: 100%;">Ajouter au panier</button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    <section class="hero">
+        <div class="giant-text">ZANZIBAR</div>
+        
         <div class="container">
-            <div class="footer-column">
-                <h3>Notre promesse</h3>
-                <p>Pas de sucres ajoutés, pas de concentrés, juste des fruits mixés avec amour pour vous donner la pêche toute la journée.</p>
+            <div class="hero-cards">
+                <div class="hero-card text-only">
+                    3 îles<br>à Zanzibar
+                </div>
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1586861845199-72f5d962ea98?auto=format&fit=crop&w=300&q=80" alt="Plage">
+                    <div class="overlay">10 jours</div>
+                </div>
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1620215712217-1bb454eb8eb5?auto=format&fit=crop&w=300&q=80" alt="Stone Town">
+                    <div class="overlay">culture swahili</div>
+                </div>
+                <div class="hero-card">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=300&q=80" alt="Océan">
+                    <div class="overlay">eaux turquoises</div>
+                </div>
+                <div class="hero-card text-only">
+                    savourez<br>l'instant
+                </div>
             </div>
-            <div class="footer-column" style="text-align: center;">
-                <h3>Ce qu'on met dedans</h3>
-                <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6fac6?auto=format&fit=crop&w=150&q=80" alt="Pomme" class="apple-icon">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">À propos du circuit</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p style="margin-bottom: 20px;">
+                        Nous avons planifié un itinéraire simple et pratique de 10 jours pour votre voyage à Zanzibar.<br>
+                        Vous visiterez trois endroits incontournables :<br>
+                        <span style="color: var(--accent);">Stone Town, Nungwi, et la Forêt de Jozani.</span>
+                    </p>
+                    <p>
+                        Ne vous souciez pas des itinéraires, des horaires ou de la recherche de lieux - tout est déjà organisé. Nous vous montrerons où aller, quoi voir et où manger, pour que vous puissiez simplement <span>profiter du voyage.</span>
+                    </p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">Jours 1–3</div>
+                        <div class="timeline-subtitle">Stone Town</div>
+                        <img src="https://images.unsplash.com/photo-1620215712217-1bb454eb8eb5?auto=format&fit=crop&w=500&q=80" alt="Stone Town">
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-title">Jours 4–6</div>
+                        <div class="timeline-subtitle">Plages de Nungwi</div>
+                        <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=500&q=80" alt="Nungwi">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Jours 7–10</div>
+                        <div class="timeline-subtitle">Safari Blue & Paje</div>
+                        <img src="https://images.unsplash.com/photo-1586861845199-72f5d962ea98?auto=format&fit=crop&w=500&q=80" alt="Bateau boutre">
+                    </div>
+                </div>
             </div>
-            <div class="footer-column">
-                <h3>Rejoignez la famille</h3>
-                <p>On est une grande famille heureuse chez SMOOTH. Suivez-nous sur les réseaux pour ne rater aucune recette !</p>
+        </div>
+    </section>
+
+    <section class="included" id="included">
+        <div class="container">
+            <h2 class="section-title">Ce qui est inclus</h2>
+            
+            <div class="included-grid">
+                <div class="included-card">
+                    <div class="included-icon">👤</div>
+                    <h3>Guides</h3>
+                    <p>2 guides locaux francophones exceptionnels qui connaissent tout sur l'histoire et les secrets de Zanzibar.</p>
+                </div>
+                
+                <div class="included-card">
+                    <div class="included-icon">✈️</div>
+                    <h3>Vols</h3>
+                    <p>Itinéraires prévus :<br>Paris — Zanzibar<br>Zanzibar — Paris</p>
+                </div>
+                
+                <div class="included-card">
+                    <div class="included-icon">🚐</div>
+                    <h3>Transferts</h3>
+                    <p>De l'aéroport vers les hôtels, et tous les déplacements terrestres entre les différentes villes.</p>
+                </div>
+                
+                <div class="included-card">
+                    <div class="included-icon">🏨</div>
+                    <h3>Hôtels</h3>
+                    <p>Hébergement luxueux et confortable face à la mer. 2 personnes par chambre (petits-déjeuners inclus).</p>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <button class="chat-btn" id="chat-toggle">💬</button>
-    <div class="chat-window" id="chat-window">
-        <div class="chat-header">
-            Bot SMOOTH 🍓
-            <button class="close-chat" id="chat-close">✖</button>
+    <section class="contact-section" id="contact">
+        <div class="container">
+            
+            <div class="contact-box">
+                <h2>Vous voulez vous joindre à nous, mais vous avez encore des questions ?</h2>
+                
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" placeholder="Laissez une demande (Nom)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Numéro de téléphone" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Commentaire">
+                    </div>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+
+            <footer>
+                <div class="logo">ZANZIBAR <span>TOURS</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#included">Inclus</a></li>
+                        <li><a href="#contact">Contacts</a></li>
+                    </ul>
+                </nav>
+                <a href="#contact" class="btn">Réserver</a>
+            </footer>
+
         </div>
-        <div class="chat-body" id="chat-body">
-            <div class="chat-msg">Coucou ! 👋 Vous avez besoin d'aide pour choisir votre cure smoothie Black Friday ?</div>
-        </div>
-        <div class="chat-input">
-            <input type="text" placeholder="Écrivez votre message..." id="chat-input-field">
-            <button onclick="document.getElementById('chat-input-field').value = ''">Envoyer</button>
-        </div>
-    </div>
+    </section>
 
-    <script>
-        // --- Script du Compte à Rebours ---
-        function updateCountdown() {
-            const now = new Date();
-            const midnight = new Date();
-            midnight.setHours(23, 59, 59, 999);
-
-            const diff = midnight - now;
-
-            if (diff <= 0) {
-                document.getElementById('countdown').innerHTML = "TERMINÉ !";
-                return;
-            }
-
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            const h = hours < 10 ? "0" + hours : hours;
-            const m = minutes < 10 ? "0" + minutes : minutes;
-            const s = seconds < 10 ? "0" + seconds : seconds;
-
-            document.getElementById('countdown').innerHTML = `${h}:${m}:${s}`;
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        // --- Script du Chatbot ---
-        const chatToggle = document.getElementById('chat-toggle');
-        const chatWindow = document.getElementById('chat-window');
-        const chatClose = document.getElementById('chat-close');
-
-        chatToggle.addEventListener('click', () => {
-            chatWindow.classList.toggle('active');
-        });
-
-        chatClose.addEventListener('click', () => {
-            chatWindow.classList.remove('active');
-        });
-    </script>
 </body>
 </html>
